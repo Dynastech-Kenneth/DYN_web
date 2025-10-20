@@ -102,7 +102,7 @@
                     color: var(--accent);
                 }
 
-        .language-selector {
+        .language-selector2 {
             background: rgba(62, 146, 204, 0.2);
             border: 1px solid var(--secondary);
             color: var(--light);
@@ -116,10 +116,62 @@
             .language-selector:hover {
                 background: rgba(62, 146, 204, 0.4);
             }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--light-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+            .language-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--darker-bg);
+            border-radius: 10px;
+            padding: 10px 0;
+            width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .language-selector:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            .language-option:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
         /* 英雄区域样式 */
         .hero {
             padding: 8rem 0 5rem;
-            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('Images/2024041303_hd.jpg') center/cover;
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('Images/Booth1.jpg') center/cover;
             text-align: center;
             min-height: 100vh;
             display: flex;
@@ -354,154 +406,304 @@
                     <span> DYNASTECH 未央數字</span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#services">服务</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="#home" data-lang-key="nav-home">首页</a></li>
+                    <li><a href="#services" data-lang-key="nav-services">服务</a></li>
+                    <li><a href="#about" data-lang-key="nav-about">关于我们</a></li>
+                    <li><a href="#contact" data-lang-key="nav-contact">联系我们</a></li>
                 </ul>
-                <select class="language-selector" id="languageSelector">
-                    <option value="zh">中文</option>
-                    <option value="en">English</option>
-                    <option value="ja">日本語</option>
-                    <option value="ko">한국어</option>
-                    <option value="fr">Français</option>
-                    <option value="ru">Русский</option>
-                </select>
+                <div class="language-selector">
+                    <button class="language-btn">
+                        <span data-lang-key="current-lang">中文</span> ▼
+                    </button>
+                    <div class="language-dropdown">
+                        <div class="language-option" data-lang="zh-CN">中文</div>
+                        <div class="language-option" data-lang="en-US">English</div>
+                        <div class="language-option" data-lang="ja-JP">日本語</div>
+                        <div class="language-option" data-lang="ko-KR">한국어</div>
+                        <div class="language-option" data-lang="fr-FR">Français</div>
+                        <div class="language-option" data-lang="ru-RU">Русский</div>
+                    </div>
+                </div>
             </nav>
+            
         </div>
+        
     </header>
     <!-- 英雄区域 -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>度量未然渾若川 星辰央落天如算</h1>
-            <p>为您的企业提供创新的金融科技与数字技术咨询与解决方案，助力业务增长与转型</p>
-            <a href="#contact" class="cta-button">联系我们</a>
-        </div>
-    </section>
-    <!-- 服务部分 -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>我们的服务</h2>
-                <p>为企业提供全方位的金融科技与数字技术服务</p>
+    <!-- 主页面内容 -->
+    <div id="homepage-content">
+        <section class="hero" id="home">
+            <div class="container">
+                <h1 data-lang-key="hero-title">度量未然渾若川 星辰央落天如算</h1>
+                <p data-lang-key="hero-subtitle">为您的企业提供创新的金融科技与数字技术咨询与解决方案，助力业务增长与转型</p>
+                <a href="#contact" class="cta-button" data-lang-key="hero-contact">联系我们</a>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="Images/2024041102.jpg" alt="Character 1" width="50" height="100">
+        </section>
+        <!-- 服务部分 -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-lang-key="services-title">我们的服务</h2>
+                    <p data-lang-key="services-subtitle">让您的数据发挥其价值</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="Images/Econ001_Poster2.jpg" alt="Card 1" width="200" height="150">
+                        </div>
+                        <h3 data-lang-key="serv1-title">数据处理：</h3>
+                        <h3 data-lang-key="serv1-title2">数据利用与分析咨询服务</h3>
+                        <p data-lang-key="serv1-detail">为包括制造与贸易业的中小企提供免费数据相关的前期咨询服务，务求让有价值的企业数据变成可以使用的数据要素。</p>
+                        <br>
+                        <p data-lang-key="serv1-detail2">其他咨询范畴包括：数据架构处理，价值挖掘，流程设计，参数化，分析报告，可视化。</p>
+                        <a href="data-process.html" class="service-button" data-lang-key="serv1-link">了解更多</a>
                     </div>
-                    <h3>企业数据价值挖掘</h3>
-                    <p>为包括制造与贸易业的中小企提供免费数据价值挖掘咨询服务，务求让有价值的企业数据变成可以使用的数据要素</p> 
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="Images/2024041303.jpg" alt="Character 2" width="50" height="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="Images/DYNexpoWeb_1.jpg" alt="Card 2" width="280" height="150">
+                        </div>
+                        <h3 data-lang-key="serv2-title">金融科技：</h3>
+                        <h3 data-lang-key="serv2-title2">保险业精算偿付模型建模</h3>
+                        <p data-lang-key="serv2-detail">针对保险公司欧盟偿二代与经济资本风险管理框架要求，我们可以协助处理精算建模与流程优化。我们亦寻求机会把上述经验应用在保险业合规范畴，包括中国内地，香港，日本等市场。</p>
+                        <a href="fintech.html" class="service-button" data-lang-key="serv2-link">了解更多</a>
                     </div>
-                    <h3>金融科技</h3>
-                    <p>针对保险公司欧盟偿二代与经济资本风险管理框架要求，我们可以协助处理精算建模。我们亦寻求机会把上述经验应用在保险业合规范畴，包括中国内地，香港，日本等市场</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="Images/2024041201a.jpg" alt="Character 3" width="50" height="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="Images/DYNvisual.jpg" alt="Card 3" width="250" height="150">
+                        </div>
+                        <h3 data-lang-key="serv3-title">可视开发：</h3>
+                        <h3 data-lang-key="serv3-title2">可视化机制与场景平台服务</h3>
+                        <p data-lang-key="serv3-detail">让数据看得见，是体现数据价值的重要一环。透过前端系统收集结构化数据，或有效的数据清洗，原始数据可以按客户需求转化成容易理解的指标，帮助客户作分析与决策。</p>
+                        <a href="visualization.html" class="service-button" data-lang-key="serv3-link">了解更多</a>
                     </div>
-                    <h3>数据可视化与利用</h3>
-                    <p>让数据看得见，是体现数据价值的重要一环。透过前端系统收集结构化数据，或有效的数据清洗，原始数据可以按客户需求转化成容易理解的指标，帮助客户作分析与决策。</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- 关于我们 -->
-    <section class="content-section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>关于我们</h2>
-                <p>多维度的金融科技与数字技术咨询公司</p>
-            </div>
-            <div class="content-block">
-                <h3><i class="fas fa-edit"></i> 公司介绍</h3>
-                <div class="editable">
-                    <p>在这里添加公司介绍文字。未央數字 DYNASTECH 是一家领先的金融科技咨询公司，致力于为全球客户提供创新的金融技术解决方案，帮助客户应对数字化转型挑战。</p>
+        </section>
+        <!-- 关于我们 -->
+        <section class="content-section" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-lang-key="about-title">关于我们</h2>
+                    <p data-lang-key="about-subtitle">多维度的金融科技与数字技术咨询公司</p>
+                </div>
+                <div class="content-block">
+                    <h3 data-lang-key="about-intro"><i class="fas fa-edit"></i> 公司介绍</h3>
+                    <div class="editable">
+                        <p data-lang-key="about-detail">未央數字有限公司在2020年成立于香港，主要为保险公司提供精算风控建模服务，除保险业业务，未央数字也涉足游戏的数据处理，以及贸易市场分析。我们希望数字技术可以愈走愈远，触及每一位有需要的客户。</p>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <h3 data-lang-key="about-phototitle"><i class="fas fa-image"></i>活动更新</h3>
+                    <div class="editable media">
+                        <i class="fas fa-image fa-3x"></i>
+                        <p>图片</p>
+                    </div>
                 </div>
             </div>
-            <div class="content-block">
-                <h3><i class="fas fa-image"></i> 团队照片（可替换区域）</h3>
-                <div class="editable media">
-                    <i class="fas fa-image fa-3x"></i>
-                    <p>在此处添加团队照片或图片</p>
+        </section>
+        <!-- 案例展示 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-lang-key="about-casetitle">成功案例</h2>
+                    <p data-lang-key="about-case">曾服务于一家英国寿险公司，帮助其建立自动化的内部模型，更准确把控公司的风险组合与储备金要求。</p>
+                </div>
+                <div class="content-block">
+                    <h3 data-lang-key="about-media"><i class="fas fa-video"></i> 案例介绍视频</h3>
+                    <div class="editable media">
+                        <i class="fas fa-video fa-3x"></i>
+                        <p>介绍视频</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- 案例展示 -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>成功案例</h2>
-                <p>我们的一些代表性项目</p>
-            </div>
-            <div class="content-block">
-                <h3><i class="fas fa-video"></i> 案例介绍视频（可替换区域）</h3>
-                <div class="editable media">
-                    <i class="fas fa-video fa-3x"></i>
-                    <p>在此处添加案例介绍视频</p>
+        </section>
+        <!-- 联系我们 -->
+        <section class="content-section" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-lang-key="contact-title">联系我们</h2>
+                    <p data-lang-key="contact-subtitle">让我们开始您的数字之旅</p>
+                </div>
+                <div class="content-block">
+                    <h3 data-lang-key="contact-info"><i class="fas fa-map-marker-alt"></i> 联系方式</h3>
+                    <div class="editable">
+                        <p data-lang-key="contact-add">地址：中国香港上环苏杭街99号嘉发商业中心11楼A</p>
+                        <p data-lang-key="contact-tel">电话：+852 5223 0024 / +86 13049485637</p>
+                        <p data-lang-key="contact-eml">邮箱：dynastech1@biznetvigator.com</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- 联系我们 -->
-    <section class="content-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>联系我们</h2>
-                <p>让我们开始您的金融科技之旅</p>
-            </div>
-            <div class="content-block">
-                <h3><i class="fas fa-map-marker-alt"></i> 联系方式</h3>
-                <div class="editable">
-                    <p>地址：中国香港上环苏杭街99号嘉发商业中心11楼A</p>
-                    <p>电话：+852 5223 0024 / +86 13049485637</p>
-                    <p>邮箱：dynastech1@biznetvigator.com</p>
+        </section>
+        <!-- 页脚 -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="logo">
+                        <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="32" height="32">
+                        <span>DYNASTECH</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="copyright">© 2025 DYNASTECH LIMITED All Rights Reserved 未央數字有限公司. 保留所有權利。</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="32" height="32">
-                    <span>DYNASTECH</span>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p class="copyright">© 2025 DYNASTECH LIMITED All Rights Reserved 未央數字有限公司. 保留所有权利。</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+ 
     <script>
-        // 语言切换功能（前端演示版）
-        document.getElementById('languageSelector').addEventListener('change', function () {
-            alert('已选择语言: ' + this.options[this.selectedIndex].text);
-            // 实际项目中这里会调用i18n库进行语言切换
-        });
-        // 滚动动画效果
-        document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.service-card, .content-block, .section-title').forEach(el => {
-                observer.observe(el);
+        // 多语言支持
+        const translations = {
+            'zh-CN': {
+                'nav-home': '首页',
+                'nav-services': '服务',
+                'nav-about': '关于我们',
+                'nav-contact': '联系我们',
+                'current-lang': '中文',
+                'hero-title': '度量未然渾若川 星辰央落天如算',
+                'hero-subtitle': '为您的企业提供创新的金融科技与数字技术咨询与解决方案，助力业务增长与转型',
+                'hero-contact': '联系我们',
+                'services-title': '我们的服务',
+                'services-subtitle': '让您的数据发挥其价值',
+                'serv1-title': '数据处理：',
+                'serv1-title2': '数据利用与分析咨询服务',
+                'serv1-detail': '为包括制造与贸易业的中小企提供免费数据相关的前期咨询服务，务求让有价值的企业数据变成可以使用的数据要素。',
+                'serv1-detail2': '其他咨询范畴包括：数据架构处理，价值挖掘，流程设计，参数化，分析报告，可视化。',
+                'serv1-link': '了解更多',
+                'serv2-title': '金融科技：',
+                'serv2-title2': '保险业精算偿付模型建模',
+                'serv2-detail': '针对保险公司欧盟偿二代与经济资本风险管理框架要求，我们可以协助处理精算建模与流程优化。我们亦寻求机会把上述经验应用在保险业合规范畴，包括中国内地，香港，日本等市场。',
+                'serv2-link': '了解更多',
+                'serv3-title': '可视开发：',
+                'serv3-title2': '可视化机制与场景平台服务',
+                'serv3-detail': '让数据看得见，是体现数据价值的重要一环。透过前端系统收集结构化数据，或有效的数据清洗，原始数据可以按客户需求转化成容易理解的指标，帮助客户作分析与决策。',
+                'serv3-link': '了解更多',
+                'about-title': '关于我们',
+                'about-subtitle': '多维度的金融科技与数字技术咨询公司',
+                'about-intro': '公司介绍',
+                'about-detail': '未央數字有限公司在2020年成立于香港，主要为保险公司提供精算风控建模服务，除保险业业务，未央数字也涉足游戏的数据处理，以及贸易市场分析。我们希望数字技术可以愈走愈远，触及每一位有需要的客户。',
+                'about-phototitle': '活动更新',
+                'about-casetitle': '成功案例',
+                'about-case': '曾服务于一家英国寿险公司，帮助其建立自动化的内部模型，更准确把控公司的风险组合与储备金要求。',
+                'about-media': '案例介绍视频',
+                'contact-title': '联系我们',
+                'contact-subtitle': '让我们开始您的数字之旅',
+                'contact-info': '联系方式',
+                'contact-add': '地址：中国香港上环苏杭街99号嘉发商业中心11楼A',
+                'contact-tel': '电话：+852 5223 0024 / +86 13049485637',
+                'contact-eml': '邮箱：dynastech1@biznetvigator.com',
+            },
+            'en-US': {
+                'nav-home': 'Home',
+                'nav-services': 'Services',
+                'nav-about': 'About Us',
+                'nav-contact': 'Contact',
+                'current-lang': 'English',
+                'hero-title': '###',
+                'hero-subtitle': 'With innovative financial and digital technology, our consulting services and solutions help business growth and transformation.',
+                'hero-contact': 'Contact us',
+                'services-title': 'Our Services',
+                'services-subtitle': 'Data driven workflow empowers your business',
+                'serv1-title': 'Data Processing:',
+                'serv1-title2': 'Consultation service on data utilization and analysis',
+                'serv1-detail': 'We serve the need of uncovering value of data across industries including manufacturing and trading SMEs, targeting to transform data to be an asset serving business’s various purposes.',
+                'serv1-detail2': 'Other consulting areas include: data structure, value mining, process design, parameterization, analysis reports, and visualization.',
+                'serv1-link': 'Details',
+                'serv2-title': 'Fintech for Insurance Sector',
+                'serv2-title2': ' ',
+                'serv2-detail': 'We mainly help on Solvency II and Economic Capital framework related works, including Actuarial modelling process enhancement. We are also looking for chances to apply relevant experience over a wider range of capital regimes including China C-ROSS II, HKRBC, Japan Solvency.',
+                'serv2-link': 'Details',
+                'serv3-title': 'Data Visualization & Utilization',
+                'serv3-title2': ' ',
+                'serv3-detail': 'Letting data to be “seen”  is one of the ways to valuate data itself. Through collection of structured data from a frontend, or effective data cleaning, raw data could be transformed to intuitive metrics, assisting clients on analysis and decision making.',
+                'serv3-link': 'Details',
+                'about-title': 'About Us',
+                'about-subtitle': 'A multi-dimensional fintech and digital transformation consulting company',
+                'about-intro': 'Our Company',
+                'about-detail': 'DYNASTECH LIMITED is established in Hong Kong since 2020. We provide actuarial modelling in solvency field mainly. Meanwhile, we also provide data related consulting services in gaming and market analysis fields. We hope data technology would reach as far as it can, supporting more clients in need as it could.',
+                'about-phototitle': 'News',
+                'about-casetitle': 'Our Stories',
+                'about-case': 'We previously helped the economic capital team of a UK multi-national life insurance company based in Hong Kong, developing and enhancing the automated regression and stochastic simulation model.',
+                'about-media': 'Media',
+                'contact-title': 'Contact Us',
+                'contact-subtitle': 'Let’s navigate through the digital transformation journey',
+                'contact-info': 'Contact Info',
+                'contact-add': 'Address: 11A, Crawford Tower, 99 Jervois Street, Sheung Wan, Hong Kong, China',
+                'contact-tel': 'Tel: +852 5223 0024 / +86 13049485637',
+                'contact-eml': 'Email: dynastech1@biznetvigator.com',
+            },
+            'ja-JP': {
+                'nav-home': 'ホーム',
+                'nav-services': 'サービス',
+                'nav-about': '企業情報',
+                'nav-contact': 'お問い合わせ',
+                'current-lang': 'Japanese',
+                'hero-title': '###',
+                'hero-subtitle': '革新的な金融テクノロジーとデジタルテクノロジーのコンサルティングとソリューションを提供し、ビジネスの成長と変革を支援します。',
+                'hero-contact': 'お問い合わせ',
+                'services-title': '事業分野',
+                'services-subtitle': 'データを価値あるものにしましょう',
+                'serv1-title': 'ビジネスデータの価値発見',
+                'serv1-title2': ' ',
+                'serv1-detail': '製造業や商社など、中小企業を含むあらゆる業界のデータの価値を発掘し、データをビジネスの様々な目的に役立つ資産へと変革することを目指しています。',
+                'serv1-detail2': 'その他のコンサルティング分野には、データアーキテクチャ、価値マイニング、プロセス設計、パラメータ化、分析レポート、視覚化などがあります。',
+                'serv1-link': 'もっと詳しく知る',
+                'serv2-title': '保険会社を向けフィンテック',
+                'serv2-title2': ' ',
+                'serv2-detail': 'ソルベンシー規則と経済資本 リスク管理フレームワークの要件：保険数理モデリング、Diversification Benefitを計算すること。また、日本のソルベンシー規制、中国のC- ROSSⅡと香港のRBCを含むリスク管理におけるこれまでの経験を活かす機会も探しています。',
+                'serv2-link': 'もっと詳しく知る',
+                'serv3-title': 'データの可視化と活用',
+                'serv3-title2': ' ',
+                'serv3-detail': 'データを「見える化」することは、データ自体を評価する方法の一つです。フロントエンドから構造化データを収集したり、効果的なデータクレンジングを行うことで、生データを直感的な指標に変換し、クライアントの分析と意思決定を支援することができます。',
+                'serv3-link': 'もっと詳しく知る',
+                'about-title': '企業情報',
+                'about-subtitle': '多面的なフィンテックとDXのコンサルティング会社',
+                'about-intro': '会社紹介',
+                'about-detail': '未央數字有限公司は2020年に香港で設立されました。当社は主に保険会社向けの保険数理リスクモデリングサービスを提供しています。保険分野以外にも、ゲームデータ処理や国際貿易市場分析も手掛けています。デジタル技術が今後も発展し、必要とするすべてのお客様に届くことを願っています。',
+                'about-phototitle': 'アップデート',
+                'about-casetitle': '成功事例',
+                'about-case': '去年、イギリスのインターナショナル生命保険会社向けに、経済資本モデリングと開発業務に関するコンサルティング サービスを提供しています。これには、自動化されたリスク要因を確立するや、規制で必要なリスク値を導き出すためのアルゴリズムに基づくランダムなリスク シナリオ シミュレーションの生成などが含まれます。',
+                'about-media': 'Media',
+                'contact-title': 'お問い合わせ',
+                'contact-subtitle': 'デジタルの旅を始めましょう',
+                'contact-info': '連絡先',
+                'contact-add': 'アドレス：中国香港シャンワン蘇杭街99号嘉発商業中心11階A',
+                'contact-tel': '電話：+852 5223 0024 / +86 13049485637',
+                'contact-eml': 'メール：dynastech1@biznetvigator.com',
+            }
+            // 其他语言可以在这里添加
+        };
+
+        // 当前语言
+        let currentLang = 'zh-CN';
+
+        // 语言切换功能
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function () {
+                const lang = this.getAttribute('data-lang');
+                if (translations[lang]) {
+                    currentLang = lang;
+                    updateLanguage();
+
+                    // 更新当前语言显示
+                    document.querySelector('.language-btn span').textContent =
+                        translations[lang]['current-lang'];
+                }
             });
         });
+
+        // 更新页面语言
+        function updateLanguage() {
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+        }
     </script>
-</body>
-</html>
+</body >
+</html >

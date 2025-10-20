@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNASTECH LIMITED - 未央數字有限公司</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a2463;
+            --secondary: #3e92cc;
+            --accent: #2de2be;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* 导航栏样式 */
+        header {
+            background: rgba(10, 36, 99, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+        }
+
+            .logo i {
+                margin-right: 0.5rem;
+                color: var(--secondary);
+            }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+            .nav-links li {
+                margin-left: 2rem;
+            }
+
+            .nav-links a {
+                color: var(--light);
+                text-decoration: none;
+                font-weight: 500;
+                transition: var(--transition);
+                padding: 0.5rem 0;
+                position: relative;
+            }
+
+                .nav-links a:after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: var(--accent);
+                    transition: var(--transition);
+                }
+
+                .nav-links a:hover:after {
+                    width: 100%;
+                }
+
+                .nav-links a:hover {
+                    color: var(--accent);
+                }
+
+        .language-selector2 {
+            background: rgba(62, 146, 204, 0.2);
+            border: 1px solid var(--secondary);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .language-selector:hover {
+            background: rgba(62, 146, 204, 0.4);
+        }
+
+        .language-selector {
+            position: relative;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--light-text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+            .language-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--darker-bg);
+            border-radius: 10px;
+            padding: 10px 0;
+            width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .language-selector:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            .language-option:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        /* 英雄区域样式 */
+        .hero {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('Images/2024042301i.jpg') center/cover;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .hero h1 {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+                background: linear-gradient(45deg, var(--secondary), var(--accent));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                animation: fadeIn 1s ease;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+                max-width: 800px;
+                margin: 0 auto 2rem;
+                color: #ccc;
+            }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            margin-top: 2rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(45, 226, 190, 0.4);
+        }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(45, 226, 190, 0.6);
+            }
+        /* 服务部分样式 */
+        .services {
+            padding: 5rem 0;
+            background: var(--dark);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+                color: var(--secondary);
+                margin-bottom: 1rem;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 3px;
+                background: linear-gradient(45deg, var(--secondary), var(--accent));
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(10, 36, 99, 0.3);
+            border: 1px solid rgba(62, 146, 204, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 25px rgba(45, 226, 190, 0.2);
+                border-color: var(--accent);
+            }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        /* 内容区域样式 */
+        .content-section {
+            padding: 5rem 0;
+            background: rgba(10, 36, 99, 0.1);
+        }
+
+        .content-block {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(18, 18, 18, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+            .content-block h3 {
+                color: var(--accent);
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+            }
+
+                .content-block h3 i {
+                    margin-right: 10px;
+                    color: var(--secondary);
+                }
+
+        .editable {
+            background: rgba(45, 226, 190, 0.1);
+            border: 1px dashed var(--accent);
+            min-height: 150px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+            .editable.media {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                color: #888;
+            }
+        /* 页脚样式 */
+        footer {
+            background: var(--primary);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            margin: 2rem 0;
+        }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0.5rem;
+                transition: var(--transition);
+                color: var(--light);
+                text-decoration: none;
+            }
+
+                .social-links a:hover {
+                    background: var(--accent);
+                    transform: translateY(-3px);
+                }
+
+        .copyright {
+            color: #ccc;
+            margin-top: 2rem;
+        }
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 1s ease forwards;
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="48" height="48">
+                    <span> DYNASTECH 未央數字</span>
+                </div>
+                <ul class="nav-links" style="display: none">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#services">服务</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+                <div class="language-selector">
+                    <button class="language-btn">
+                        <span data-lang-key="current-lang">中文</span> ▼
+                    </button>
+                    <div class="language-dropdown">
+                        <div class="language-option" data-lang="zh-CN">中文</div>
+                        <div class="language-option" data-lang="en-US">English</div>
+                        <div class="language-option" data-lang="ja-JP">日本語</div>
+                        <div class="language-option" data-lang="ko-KR">한국어</div>
+                        <div class="language-option" data-lang="fr-FR">Français</div>
+                        <div class="language-option" data-lang="ru-RU">Русский</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- 英雄区域 -->
+    <!-- 服务详情页面 - 金融数据分析 -->
+    <div id="data-process" class="service-detail">
+        <div class="container">
+            <div class="service-header">
+                <h1>可视开发：可视化机制与场景平台服务</h1>
+                <p></p>
+            </div>
+            <div class="service-content">
+                <div class="service-image">
+                    <i class="fas fa-analytics fa-5x"></i>
+                </div>
+                <div>
+                    <h2 data-lang-key="dataprocess-title">可视开发：可视化机制与场景平台服务</h2>
+                    <p data-lang-key="dataprocess-p1">让数据看得见，是体现数据价值的重要一环。透过前端系统收集结构化数据，或有效的数据清洗，原始数据可以按客户需求转化成容易理解的指标，帮助客户作分析与决策。</p>
+                    <ul class="feature-list" style="display: none">
+                        <li data-lang-key="dataprocess-p2"><i class="fas fa-check-circle"></i></li>
+                        <li data-lang-key="dataprocess-p3"><i class="fas fa-check-circle"></i></li>
+                        <li data-lang-key="dataprocess-p4"><i class="fas fa-check-circle"></i></li>
+                    </ul>
+                    <p data-lang-key="dataprocess-p5"></p>
+                    <br />
+                    <div class="service-features">
+                        <h3 data-lang-key="dataprocess-case">教育方向的案例：与学科题目系统结合</h3>
+                        <p data-lang-key="dataprocess-case2">传统的计分做法或许没能有效的指向学生问题所在，而这个方案可以将学生做练习的结果以各种统计参数展示，学生在什么方面做的好或不好，进步了还是退步了都一目了然。</p>
+                        <br />
+                        <h3 data-lang-key="dataprocess-set">参考数据集：</h3>
+                        <ul class="feature-list">
+                            <li data-lang-key="dataprocess-set2"><i class="fas fa-check-circle">世界贸易组织1990到2023年33国别，协调编号别贸易数据2.5亿条</i></li>
+                            <li data-lang-key="dataprocess-set3"><i class="fas fa-check-circle">资产市场数据外汇15种，大宗商品20种，股市指数25种</i></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-block">
+                <h3 data-lang-key="dataprocess-media"><i class="fas fa-image"></i>宏观经济数据在高中经济科教学的应用</h3>
+                <div class="editable media">
+                    <p></p>
+                    <img src="Images/Econ001_Poster2.jpg" alt="Economics application illustration" width="960" height="540">
+                </div>
+            </div>
+            <a href="index.html#services" class="back-button" data-lang-key="back">
+                <i class="fas fa-arrow-left"></i> 返回服务列表
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // 多语言支持
+        const translations = {
+            'zh-CN': {
+                'dataprocess-title': '数据处理：数据利用与分析咨询服务',
+                'dataprocess-p1': '我们为包括制造与贸易业的中小企提供免费数据价值挖掘咨询服务，务求让有价值的企业数据变成可以使用的数据要素。',
+                'dataprocess-p2': '',
+                'dataprocess-p3': '',
+                'dataprocess-p4': '',
+                'dataprocess-p5': '我们通过了解客户私有数据，可以提供关于数据整理与分析的咨询服务，并可以客制化将私有数据与宏观数据透过建模方式结合，增强分析效果',
+                'current-lang': '中文',
+                'dataprocess-case': '案例：面向教育的经济数据平台',
+                'dataprocess-case2': '画面展示的是以经济数据导入展示版面，让学生从与数字的互动中更深入的了解经济课上学到的概念。',
+                'dataprocess-set': '参考数据集：',
+                'dataprocess-set2': '世界贸易组织1990到2023年33国别，协调编号别贸易数据2.5亿条',
+                'dataprocess-set3': '资产市场数据外汇15种，大宗商品20种，股市指数25种',
+                'dataprocess-media': '宏观经济数据在高中经济科教学的应用',
+                'back': '返回服务列表',
+            },
+            'en-US': {
+                'dataprocess-title': 'Uncovering value within business data',
+                'dataprocess-p1': 'We serve the need of uncovering value of data across industries including manufacturing and trading SMEs,  targeting to transform data to be an asset serving business’s various purposes.',
+                'dataprocess-p2': '',
+                'dataprocess-p3': '',
+                'dataprocess-p4': '',
+                'dataprocess-p5': 'Through listening to clients’ daily usage on their data, we provide consultation and solution on data cleaning and usage. These data might be combined with market data to enhance the performance of analysis.',
+                'current-lang': 'English',
+                'dataprocess-case': 'Application on education field',
+                'dataprocess-case2': 'This is a platform where economic data are displayed, students could interacts with the numbers, enhancing the efficiency in learning economic concepts in class.',
+                'dataprocess-set': 'Reference Data Base',
+                'dataprocess-set2': 'WTO trading data from 1990 to 2023, across 33 countries',
+                'dataprocess-set3': 'Asset market data including foreign exchange, commodities, stocks',
+                'dataprocess-media': 'Macro economics data being used in economic simulation for educational purpose',
+                'back': 'Back to home',
+            },
+            'ja-JP': {
+                'dataprocess-title': 'ビジネスデータの価値発見',
+                'dataprocess-p1': '製造業や商社など、中小企業を含むあらゆる業界のデータの価値を発掘し、データをビジネスの様々な目的に役立つ資産へと変革することを目指しています。',
+                'dataprocess-p2': '',
+                'dataprocess-p3': '',
+                'dataprocess-p4': '',
+                'dataprocess-p5': 'お客様のプライベートデータの価値に関するコンサルティングサービスを提供することができ、モデリングを通じてプライベートデータとマクロデータの組み合わせをカスタマイズし、分析効果を高めることができます。',
+                'current-lang': '日本語',
+                'dataprocess-case': '教育分野への応用',
+                'dataprocess-case2': 'これは経済データを表示するプラットフォームであり、学生は数値を操作できるため、授業での経済概念の学習効率が向上します',
+                'dataprocess-set': '参照データベース',
+                'dataprocess-set2': '1990年から2023年までの33カ国におけるWTO貿易データ',
+                'dataprocess-set3': '外国為替、コモディティ、株式などの資産市場データ',
+                'dataprocess-media': '教育目的の経済シミュレーションに使用されているマクロ経済データ',
+                'back': 'バック',
+            }
+            // 其他语言可以在这里添加
+        };
+
+        // 当前语言
+        let currentLang = 'zh-CN';
+
+        // 语言切换功能
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function () {
+                const lang = this.getAttribute('data-lang');
+                if (translations[lang]) {
+                    currentLang = lang;
+                    updateLanguage();
+
+                    // 更新当前语言显示
+                    document.querySelector('.language-btn span').textContent =
+                        translations[lang]['current-lang'];
+                }
+            });
+        });
+
+        // 更新页面语言
+        function updateLanguage() {
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+        }
+        // 滚动动画效果
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.service-card, .content-block, .section-title').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
