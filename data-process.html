@@ -529,8 +529,17 @@
             // 其他语言可以在这里添加
         };
 
-        // 当前语言
-        let currentLang = 'zh-CN';
+        // 当前语言 - 从localStorage读取或使用默认值
+        let currentLang = localStorage.getItem('preferred-language') || 'zh-CN';
+
+        // 页面加载时应用语言
+        document.addEventListener('DOMContentLoaded', function () {
+            updateLanguage();
+
+            // 设置语言选择器的当前语言显示
+            document.querySelector('.language-btn span').textContent =
+                translations[currentLang]['current-lang'];
+        });
 
         // 语言切换功能
         document.querySelectorAll('.language-option').forEach(option => {
@@ -538,6 +547,7 @@
                 const lang = this.getAttribute('data-lang');
                 if (translations[lang]) {
                     currentLang = lang;
+                    localStorage.setItem('preferred-language', lang);
                     updateLanguage();
 
                     // 更新当前语言显示
