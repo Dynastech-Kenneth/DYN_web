@@ -690,7 +690,7 @@
         // 页面加载时应用语言
         document.addEventListener('DOMContentLoaded', function () {
             updateLanguage();
-
+            updateUrl();
             // 设置语言选择器的当前语言显示
             document.querySelector('.language-btn span').textContent =
                 translations[currentLang]['current-lang'];
@@ -710,7 +710,7 @@
                     // 更新当前语言显示
                     document.querySelector('.language-btn span').textContent =
                         translations[lang]['current-lang'];
-                    updateUrl();
+
                 }
             });
         });
