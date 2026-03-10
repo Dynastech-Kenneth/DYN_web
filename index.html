@@ -514,7 +514,7 @@
                     <div class="editable media">
                         <!-- <i class="fas fa-video fa-3x"></i>
                             <p>介绍视频</p>-->
-                        <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/yZan6W3cTVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                        <iframe id="video-player-1" width="640" height="360" src="https://www.youtube-nocookie.com/embed/yZan6W3cTVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
                                 referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
@@ -705,6 +705,7 @@
                     currentLang = lang;
                     localStorage.setItem('preferred-language', lang);
                     updateLanguage();
+                    updateUrl();
 
                     // 更新当前语言显示
                     document.querySelector('.language-btn span').textContent =
@@ -721,6 +722,19 @@
                     element.textContent = translations[currentLang][key];
                 }
             });
+        }
+
+        function updateUrl() {
+            const iframeElement = document.getElementById('video-player-1');
+            if (currentLang = "zh-CN") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/yZan6W3cTVs';
+            }
+            if (currentLang = "en-US") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/HxzZGDquApE';
+            }
+            if (currentLang = "ja-JP") {
+                iframeElement.src = 'https://www.youtube-nocookie.com/embed/B02rGTgsdgM';
+            }
         }
     </script>
 </body >
