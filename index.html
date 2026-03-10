@@ -705,11 +705,12 @@
                     currentLang = lang;
                     localStorage.setItem('preferred-language', lang);
                     updateLanguage();
-                    updateUrl();
+
 
                     // 更新当前语言显示
                     document.querySelector('.language-btn span').textContent =
                         translations[lang]['current-lang'];
+                    updateUrl();
                 }
             });
         });
@@ -729,10 +730,10 @@
             if (currentLang = "zh-CN") {
                 iframeElement.src = 'https://www.youtube-nocookie.com/embed/yZan6W3cTVs';
             }
-            if (currentLang = "en-US") {
+            else if (currentLang = "en-US") {
                 iframeElement.src = 'https://www.youtube-nocookie.com/embed/HxzZGDquApE';
             }
-            if (currentLang = "ja-JP") {
+            else if (currentLang = "ja-JP") {
                 iframeElement.src = 'https://www.youtube-nocookie.com/embed/B02rGTgsdgM';
             }
         }
