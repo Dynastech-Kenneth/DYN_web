@@ -6,6 +6,13 @@
     <title>DYNASTECH LIMITED - 未央數字有限公司</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .no-download {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+    </style>
+    <style>
         :root {
             --primary: #0a2463;
             --secondary: #3e92cc;
@@ -402,7 +409,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="48" height="48">
+                    <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="48" height="48" class="no-download">
                     <span> DYNASTECH 未央數字</span>
                 </div>
                 <ul class="nav-links" style="display: none">
@@ -460,10 +467,15 @@
                 </div>
             </div>
             <div class="content-block">
+                <h3 data-lang-key="visual-media-0"><i class="fas fa-image"></i> 说明</h3>
+                <div class="editable media">
+                    <p></p>
+                    <img src="Images/DYNvisual_2.jpg" alt="Illustration" width="1084" height="706" class="no-download">
+                </div>
                 <h3 data-lang-key="visual-media"><i class="fas fa-image"></i> 成绩数据在高中教学的应用</h3>
                 <div class="editable media">
                     <p></p>
-                    <img src="Images/DYNvisual.jpg" alt="Education application illustration" width="1084" height="706">
+                    <img src="Images/DYNvisual.jpg" alt="Education application illustration" width="1084" height="706" class="no-download">
                 </div>
             </div>
             <a href="index.html#services" class="back-button" data-lang-key="back">
@@ -487,6 +499,7 @@
                 'visual-case2': '传统的计分做法或许没能有效的指向学生问题所在，而这个方案可以将学生做练习的结果以各种统计参数展示，学生在什么方面做的好或不好，进步了还是退步了都一目了然。',
                 'visual-poc': '',
                 'visual-poc2': '',
+                'visual-media-0': '说明',
                 'visual-media': '经济数据在高中教学的应用',
                 'back': '返回服务列表',
             },
@@ -502,6 +515,7 @@
                 'visual-case2': 'Traditional scoring practice in tests and exams may not effectively pinpoint the area of issues. In this demonstration, results from practices done by a student is displayed with a couple of metrics, showing the areas done well and areas of improvement needed, in terms of time series.',
                 'visual-poc': '',
                 'visual-poc2': '',
+                'visual-media-0': 'Illustration',
                 'visual-media': 'Quiz results analyzed for each students',
                 'back': 'Back to home',
             },
@@ -517,6 +531,7 @@
                 'visual-case2': 'テストや試験における従来の採点方法では、問題点を効果的に特定できない場合があります。このデモでは、生徒が行った練習の結果がいくつかの指標とともに表示され、よくできた点と改善が必要な点が時系列で示されます。',
                 'visual-poc': '',
                 'visual-poc2': '',
+                'visual-media': '説明',
                 'visual-media': 'クイズ結果を分析',
                 'back': 'バック',
             }

@@ -6,6 +6,13 @@
     <title>DYNASTECH LIMITED - 未央數字有限公司</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .no-download {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+    </style>
+    <style>
         :root {
             --primary: #0a2463;
             --secondary: #3e92cc;
@@ -113,16 +120,16 @@
             outline: none;
         }
 
-            .language-selector:hover {
-                background: rgba(62, 146, 204, 0.4);
-            }
+        .language-selector:hover {
+            background: rgba(62, 146, 204, 0.4);
+        }
 
         .language-selector {
             position: relative;
         }
 
         .language-btn {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             border: none;
             color: var(--light-text);
             padding: 8px 15px;
@@ -134,7 +141,7 @@
         }
 
             .language-btn:hover {
-                background: rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.3);
             }
 
         .language-dropdown {
@@ -402,7 +409,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="48" height="48">
+                    <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="48" height="48" class="no-download">
                     <span> DYNASTECH 未央數字</span>
                 </div>
                 <ul class="nav-links">
@@ -449,7 +456,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="Images/Econ001_Poster2.jpg" alt="Card 1" width="200" height="150">
+                            <img src="Images/Econ001_Poster2.jpg" alt="Card 1" width="200" height="150" class="no-download">
                         </div>
                         <h3 data-lang-key="serv1-title">数据处理：</h3>
                         <h3 data-lang-key="serv1-title2">数据利用与分析咨询服务</h3>
@@ -460,7 +467,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="Images/DYNexpoWeb_1.jpg" alt="Card 2" width="280" height="150">
+                            <img src="Images/DYNexpoWeb_1.jpg" alt="Card 2" width="280" height="150" class="no-download">
                         </div>
                         <h3 data-lang-key="serv2-title">金融科技：</h3>
                         <h3 data-lang-key="serv2-title2">保险业精算偿付模型建模</h3>
@@ -469,7 +476,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="Images/DYNvisual.jpg" alt="Card 3" width="250" height="150">
+                            <img src="Images/DYNvisual.jpg" alt="Card 3" width="250" height="150" class="no-download">
                         </div>
                         <h3 data-lang-key="serv3-title">可视开发：</h3>
                         <h3 data-lang-key="serv3-title2">可视化机制与场景平台服务</h3>
@@ -489,15 +496,28 @@
                 <div class="content-block">
                     <h3 data-lang-key="about-intro"><i class="fas fa-edit"></i> 公司介绍</h3>
                     <div class="editable">
-                        <p data-lang-key="about-detail">未央數字有限公司在2020年成立于香港，主要为保险公司提供精算风控建模服务，除保险业业务，未央数字也涉足游戏的数据处理，以及贸易市场分析。我们希望数字技术可以愈走愈远，触及每一位有需要的客户。</p>
+                        <p data-lang-key="about-detail">未央數字有限公司在2020年成立于香港，主要为保险公司提供精算模型与偿付能力建模服务。除保险业外，未央数字也积极参与其他行业的数据与数字相关业务，比如游戏业的数据处理，进出口业的贸易市场分析，律所的出海市场风险分析量化等。作为咨询公司，未央数字依托自己研发的量化模型，数据处理与分析工具，可视化产品，希望帮助客户从无序的数字中整理出有用的信息，通过数据了解自身，了解市场，知己知彼。</p>
+                        <pre> </pre>
+                        <p data-lang-key="about-detail-2">在新的一年，我们将开始针对保险公司的偿付能力建模工作，细节会尽量考虑中国国家金融监督管理总局的保险公司偿付能力监管规则二，欧洲保险和职业养老金管理局的偿付能力二代，与日本金融厅的经济价值偿付规制。稍后将在此频道陆续发放内容介绍，敬请期待。我们亦欢迎有兴趣的同行一起交流合作。</p>
                     </div>
                 </div>
                 <div class="content-block">
                     <h3 data-lang-key="about-phototitle"><i class="fas fa-image"></i>活动更新</h3>
                     <div class="editable media">
                         <!--<i class="fas fa-image fa-3x"></i>-->
-                        <img src="Images/DYNexpo_202509.jpg" alt="Card 2" width="350" height="248">
+                        <img src="Images/DYNexpo_202509.jpg" alt="Expo 202509" width="350" height="248" class="no-download">
                         <p data-lang-key="about-update-202509">2025年9月，未央數字在第四届全球数字贸易博览会参展——中国。杭州</p>
+                    </div>
+                    <div class="editable media">
+                        <img src="Images/DYNexpo_202409.jpg" alt="Expo 202409" width="350" height="248" class="no-download">
+                        <p data-lang-key="about-update-202409">2024年9月，未央數字在第三届全球数字贸易博览会参展——中国。杭州</p>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <h3 data-lang-key="about-newsletter"><i class="fas fa-image"></i>业务通讯</h3>
+                    <div class="editable media">
+                        <img src="Images/Newsletter2026_01.png" alt="Newsletter 2026" width="450" height="550" class="no-download">
+                        <p data-lang-key="about-newsletter-2026">2026未央數字业务通讯</p>
                     </div>
                 </div>
             </div>
@@ -543,11 +563,11 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="logo">
-                        <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="32" height="32">
+                        <img src="Images/UnitedLogos_DYA.jpg" alt="DYNASTECH Logo" width="32" height="32" class="no-download">
                         <span>DYNASTECH</span>
                     </div>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://hk.linkedin.com/in/kenneth-wong-b30ab8376"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -588,9 +608,13 @@
                 'about-title': '关于我们',
                 'about-subtitle': '多维度的金融科技与数字技术咨询公司',
                 'about-intro': '公司介绍',
-                'about-detail': '未央數字有限公司在2020年成立于香港，主要为保险公司提供精算风控建模服务，除保险业业务，未央数字也涉足游戏的数据处理，以及贸易市场分析。我们希望数字技术可以愈走愈远，触及每一位有需要的客户。',
+                'about-detail': '未央數字有限公司在2020年成立于香港，主要为保险公司提供精算模型与偿付能力建模服务。除保险业外，未央数字也积极参与其他行业的数据与数字相关业务，比如游戏业的数据处理，进出口业的贸易市场分析，律所的出海市场风险分析量化等。作为咨询公司，未央数字依托自己研发的量化模型，数据处理与分析工具，可视化产品，希望帮助客户从无序的数字中整理出有用的信息，通过数据了解自身，了解市场，知己知彼。',
+                'about-detail-2': '在新的一年，我们将开始针对保险公司的偿付能力建模工作，细节会尽量考虑中国国家金融监督管理总局的保险公司偿付能力监管规则二，欧洲保险和职业养老金管理局的偿付能力二代，与日本金融厅的经济价值偿付规制。稍后将在此频道陆续发放内容介绍，敬请期待。我们亦欢迎有兴趣的同行一起交流合作。',
                 'about-phototitle': '活动更新',
                 'about-update-202509': '2025年9月，未央數字在第四届全球数字贸易博览会参展——中国。杭州',
+                'about-update-202409': '2024年9月，未央數字在第三届全球数字贸易博览会参展——中国。杭州',
+                'about-newsletter': '业务通讯',
+                'about-newsletter-2026': '2026未央數字业务通讯',
                 'about-casetitle': '成功案例',
                 'about-case': '曾服务于一家英国寿险公司，帮助其建立自动化的内部模型，更准确把控公司的风险组合与储备金要求。',
                 'about-media': '公司介绍视频',
@@ -628,9 +652,13 @@
                 'about-title': 'About Us',
                 'about-subtitle': 'A multi-dimensional fintech and digital transformation consulting company',
                 'about-intro': 'Our Company',
-                'about-detail': 'DYNASTECH LIMITED is established in Hong Kong since 2020. We provide actuarial modelling in solvency field mainly. Meanwhile, we also provide data related consulting services in gaming and market analysis fields. We hope data technology would reach as far as it can, supporting more clients in need as it could.',
+                'about-detail': 'DYNASTECH LIMITED is established in Hong Kong since 2020. We provide insurance firms with  actuarial modelling and solvency capital modelling services. Apart from the insurance industry, DYNASTECH actively participate in projects across different fields, from data analysis for gaming industry, market analysis for export and import trades, to risk quantification for law firms. As a consulting firm, DYNASTECH utilizes self-developed quantification model, analysis tools and visualization products, together with clients we turn meaningless digits to informative results, allowing a thorough understanding of the business and market.',
+                'about-detail-2': 'In this new year, we have kicked off the development of Solvency modelling, considering the details within EIOPA Solvency II, China C- ROSS and Japan ESR frameworks.  We are also welcoming collaborations with the industry. There will be new release about the contents afterwards, stay tuned.',
                 'about-phototitle': 'News',
                 'about-update-202509': 'In September 2025, DYNASTECH participated in The Fourth Global Difital Trade Expo as exhibitor – Hangzhou, China.',
+                'about-update-202409': 'In September 2024, DYNASTECH participated in The Third Global Difital Trade Expo as exhibitor – Hangzhou, China.',
+                'about-newsletter': 'Newsletter',
+                'about-newsletter-2026': '2026 DYNASTECH Newsletter',
                 'about-casetitle': 'Our Stories',
                 'about-case': 'We previously helped the economic capital team of a UK multi-national life insurance company based in Hong Kong, developing and enhancing the automated regression and stochastic simulation model.',
                 'about-media': 'Company introduction video',
@@ -668,18 +696,66 @@
                 'about-title': '企業情報',
                 'about-subtitle': '多面的なフィンテックとDXのコンサルティング会社',
                 'about-intro': '会社紹介動画',
-                'about-detail': '未央數字有限公司は2020年に香港で設立されました。当社は主に保険会社向けの保険数理リスクモデリングサービスを提供しています。保険分野以外にも、ゲームデータ処理や国際貿易市場分析も手掛けています。デジタル技術が今後も発展し、必要とするすべてのお客様に届くことを願っています。',
+                'about-detail': '2020年に香港で設立された未央数字有限公司は、主に保険会社向けに保険数理モデルとソルベンシーモデリングサービスを提供しています。保険業界以外にも、ゲーム業界向けのデータ処理、貿易業界向けの市場分析、海外進出を目指す法律事務所向けの定量リスク分析など、データおよびデジタル関連事業にも積極的に取り組んでいます。コンサルティング会社として、自社開発の定量モデル、データ処理・分析ツール、可視化製品を活用し、一見混沌としたデータから有用な情報を抽出し、顧客が自社、市場、そして競合他社を理解できるよう支援しています。',
+                'about-detail-2': '新年には、保険会社のソルベンシーモデリングに着手します。具体的な取り組みとしては、日本の金融庁の経済価値ソルベンシー規制、中国国家金融監督管理総局の保険会社ソルベンシー規則II、そして欧州保険・企業年金監督局のソルベンシーIIフレームワークを考慮します。これらの規則に関する詳細は、後日このチャンネルで発表いたしますので、どうぞご期待ください。また、ご関心のある同僚の皆様とのアイデア交換や協働も歓迎いたします。',
                 'about-phototitle': 'アップデート',
                 'about-update-202509': '2025年9月、未央数字は中国杭州で開催される第4回世界デジタル貿易博覧会に出展しますた。',
+                'about-update-202409': '2024年9月、未央数字は中国杭州で開催される第3回世界デジタル貿易博覧会に出展しますた。',
+                'about-newsletter': 'ビジネスコミュニケーション',
+                'about-newsletter-2026': '2026未央數字ビジネスコミュニケーション',
                 'about-casetitle': '成功事例',
                 'about-case': '去年、イギリスのインターナショナル生命保険会社向けに、経済資本モデリングと開発業務に関するコンサルティング サービスを提供しています。これには、自動化されたリスク要因を確立するや、規制で必要なリスク値を導き出すためのアルゴリズムに基づくランダムなリスク シナリオ シミュレーションの生成などが含まれます。',
-                'about-media': 'Media',
+                'about-media': '会社紹介動画',
                 'contact-title': 'お問い合わせ',
                 'contact-subtitle': 'デジタルの旅を始めましょう',
                 'contact-info': '連絡先',
                 'contact-add': '地域：中国。香港',
                 'contact-tel': '電話：',
                 'contact-eml': 'メール：dynastech1@biznetvigator.com',
+            },
+            'ko-KR': {
+                'nav-home': '홈페이지',
+                'nav-services': '서비스',
+                'nav-about': '회사 소개',
+                'nav-contact': '문의하기',
+                'current-lang': '한국어',
+                'hero-title': '아직 다가오지 않은 것을 재면 흐르는 강물처럼 흐리게 스며들고，별들이 모여 떨어져도 하늘은 계산하듯 정확하리。',
+                'hero-subtitle': '혁신적인 금융 및 디지털 기술을 바탕으로, 당사의 컨설팅 서비스와 솔루션은 기업의 성장과 변혁을 돕습니다.',
+                'hero-contact': '문의하기',
+                'services-title': '우리의 서비스',
+                'services-subtitle': '데이터 기반 워크플로우로 비즈니스 강화',
+                'serv1-title': '데이터 처리:',
+                'serv1-title2': '데이터 활용 및 분석 컨설팅 서비스',
+                'serv1-detail': '우리는 제조, 무역, 중소기업을 포함한 산업 전반에서 데이터의 가치를 발굴해야 하는 필요성에 부응하며, 데이터를 기업의 다양한 목적에 부합하는 자산으로 전환하는 것을 목표로 합니다.',
+                'serv1-detail2': '기타 컨설팅 분야로는 데이터 구조, 가치 마이닝, 프로세스 설계, 매개변수화, 분석 보고서, 시각화 등이 있습니다.',
+                'serv1-link': '세부',
+                'serv2-title': '보험 부문을 위한 핀테크',
+                'serv2-title2': ' ',
+                'serv2-detail': '저희는 주로 Solvency II 및 경제자본 프레임워크 관련 업무, 특히 보험계리 모델링 프로세스 개선을 지원합니다. 또한 신지급여력제도K-ICS를 포함한 다양한 자본 제도에 대한 관련 경험을 활용할 수 있는 기회를 모색하고 있습니다.',
+                'serv2-link': '세부',
+                'serv3-title': '데이터 시각화 및 활용',
+                'serv3-title2': ' ',
+                'serv3-detail': '데이터를 "보이게" 하는 것은 데이터 자체의 가치를 평가하는 방법 중 하나입니다. 프런트엔드에서 구조화된 데이터를 수집하거나 효과적인 데이터 정제를 통해 원시 데이터를 직관적인 지표로 변환하여 고객의 분석 및 의사 결정을 지원할 수 있습니다.',
+                'serv3-link': '세부',
+                'about-title': '회사 소개',
+                'about-subtitle': '다차원 핀테크 및 디지털 혁신 컨설팅 회사',
+                'about-intro': '우리 회사',
+                'about-detail': 'DYNASTECH LIMITED는 2020년 홍콩에 설립되어 보험 회사에 계리 모델링 및 지급 능력 자본 모델링 서비스를 제공하고 있습니다. 보험 산업 외에도 게임 산업 데이터 분석, 수출입 시장 분석, 로펌 리스크 정량화 등 다양한 분야의 프로젝트에 적극적으로 참여하고 있습니다. 컨설팅 회사로서 다이나스테크는 자체 개발한 정량화 모델, 분석 도구 및 시각화 제품을 활용하여 고객과 함께 의미 없는 수치를 유용한 결과로 변환함으로써 비즈니스와 시장을 심층적으로 이해할 수 있도록 지원합니다.',
+                'about-detail-2': '새해에는 EIOPA Solvency II, 중국 C-ROSS, 일본 ESR 프레임워크의 세부 사항을 고려한 지급 능력 모델링 개발을 시작했습니다. 업계와의 협력도 환영합니다. 추후 더 자세한 내용을 공개할 예정이니 많은 관심 부탁드립니다.',
+                'about-phototitle': '뉴스',
+                'about-update-202509': '2025년 9월 DYNASTECH 숫자는 중국 항저우에서 개최되는 제4회 세계 디지털 무역 박람회에 출전했습니다.',
+                'about-update-202409': '2024년 9월 DYNASTECH 숫자는 중국 항저우에서 개최되는 제3회 세계 디지털 무역 박람회에 출전했습니다.',
+                'about-newsletter': '뉴스레터',
+                'about-newsletter-2026': '2026년 DYNASTECH 뉴스레터',
+                'about-casetitle': '우리의 이야기',
+                'about-case': '이전에 우리는 홍콩에 본사를 둔 영국 다국적 생명보험 회사의 경제 자본 팀을 도와 자동 회귀 및 확률적 시뮬레이션 모델을 개발하고 개선했습니다.',
+                'about-media': '회사 소개 영상',
+                'contact-title': '문의하기',
+                'contact-subtitle': '디지털 전환 여정에 함께 참여합시다.',
+                'contact-info': '연락처 정보',
+                'contact-add': '지역: 홍콩, 중국',
+                'contact-tel': '전화:',
+                'contact-eml': '이메일: dynastech1@biznetvigator.com',
             }
             // 其他语言可以在这里添加
         };
